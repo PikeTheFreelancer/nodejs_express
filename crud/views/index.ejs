@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Hello world</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <form action="/search" method="get">
+      <input type="text" name="searchStr" placeholder="saerch...">
+    </form>
+    <table>
+      <tr>
+        <th>ID</th>
+        <td>Title</td>
+        <td>Action</td>
+      </tr>
+      <% posts.forEach(function(post) { %>
+        <tr>
+          <th><%= post.id %></th>
+          <td><%= post.title %></td>
+          <td><a href="/edit/<%= post.id %>">edit</a> / <a href="/delete/<%= post.id %>">delete</a></td>
+        </tr>
+      <% }); %> 
+      <tr>
+        <th colspan="3"><a style="text-decoration: none;" href="/create">+</a></th>
+      </tr>
+    </table>
   </body>
 </html>

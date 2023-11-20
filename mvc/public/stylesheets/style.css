@@ -7,7 +7,7 @@ a {
   color: #00B7FF;
 }
 
-th, td {
-  padding: 10px 20px;
+td, th{
   border: solid 1px #000;
+  padding: 10px 20px;
 }
